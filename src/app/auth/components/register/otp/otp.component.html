@@ -1,0 +1,79 @@
+<ion-app>
+  <app-header></app-header>
+  <ion-content forceOverscroll="false">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center ">
+        <ion-col size="12" sizeSm="10" sizeMd="8" sizeLg="6" sizeXl="4">
+          <div class="ion-text-center ion-padding-horizontal ion-padding-top">
+            <img
+              src="https://animalz.pk:8094/files/ec062fd8-a205-49df-b8ac-c2b84e18723b.png"
+              alt="logo"
+            />
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" sizeMd="8" sizeLg="6" sizeXl="4">
+          <ion-card class="ion-card-no-border">
+            <ion-card-content>
+              <form autocomplete="off">
+                <div class="">
+                  <ion-text>
+                    <h1 style="font-weight: 700">Verify 6 Digit Code</h1>
+                    <h3 style="font-weight: 300; padding-top: 8px">
+                      Enter the 6-Digit code sent to you at
+                    </h3>
+                    <h3 style="font-weight: 300; padding-top: 8px">
+                      +923125254994 <a href="#"> Change number</a>
+                    </h3>
+                  </ion-text>
+                </div>
+
+                <ion-item lines="none" class="ion-no-padding">
+                  <div class="otp-style">
+                    <ngx-otp-input
+                      [config]="config"
+                      (input)="clearErrorMessage()"
+                      (fill)="handleFillEvent($event)"
+                      style="background-color: white;"
+                    >
+                    </ngx-otp-input>
+                    <div class="text-danger" *ngIf="errorMessage">
+                      {{ "OTP.invalid_otp" | translate }}
+                    </div>
+                  </div>
+                </ion-item>
+
+                <ion-grid>
+                  <ion-row class="ion-justify-content-start">
+                    <div>
+                      <ion-text
+                        >I didnt recieve a code? <a href="#">Resend</a></ion-text
+                      >
+                    </div>
+                  </ion-row>
+                </ion-grid>
+                <ion-row class="ion-justify-content-center ion-margin-top ion-no-padding">
+                  <ion-col size="12">
+                    <ion-button
+                      type="submit"
+                      expand="block"
+                      class="background-blue-gradiant"
+                      routerLink="/auth/register/terms"
+                    >
+                      Continue
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+              </form>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  <app-footer></app-footer>
+</ion-app>

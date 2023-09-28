@@ -1,0 +1,152 @@
+<ion-app>
+  <app-header></app-header>
+  <ion-content forceOverscroll="false">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" sizeSm="10" sizeMd="8" sizeLg="6" sizeXl="4">
+          <div class="ion-text-center  ion-padding-top">
+            <img
+              src="https://animalz.pk:8094/files/ec062fd8-a205-49df-b8ac-c2b84e18723b.png"
+              alt="logo"
+            />
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" sizeMd="8" sizeLg="6" sizeXl="4">
+          <ion-card class="ion-card-no-border ion-no-padding">
+            <ion-card-content>
+              <form autocomplete="off">
+                <div class="">
+                  <ion-text>
+                    <h1 style="font-weight: 700">Select</h1>
+                    <h3 style="font-weight: 300; padding-top: 8px">
+                      Institute type to continue!
+                    </h3>
+                  </ion-text>
+                </div>
+                <div style="width: 100%; display: flex">
+                  <label for="KinderGarden" style="width: 100%">
+                    <ion-card (click)="setValue(0)">
+                      <input
+                        hidden="true"
+                        type="radio"
+                        id="KinderGarden"
+                        name="catergorySelection"
+                        [value]="0"
+                      />
+                      <ion-card-content class="card-body center-content-item">
+                        <ion-img
+                          src="https://animalz.pk:8094/files/02ea8872-4c0e-4737-9203-e5d7b64670c1.png"
+                        ></ion-img>
+                      </ion-card-content>
+                      <div
+                        class="center-content-item"
+                        [ngClass]="
+                          value == 0 ? 'card-footer-selected' : 'card-footer'
+                        "
+                      >
+                        <p>KinderGarden</p>
+                      </div>
+                    </ion-card>
+                  </label>
+                  <label for="College" style="width: 100%">
+                    <ion-card (click)="setValue(1)">
+                      <input
+                        hidden="true"
+                        type="radio"
+                        id="College"
+                        name="catergorySelection"
+                        [value]="1"
+                      />
+                      <ion-card-content class="card-body center-content-item">
+                        <ion-img
+                          src="https://animalz.pk:8094/files/2f17592c-dfd1-4c03-91f9-c64c76030be9.png"
+                        ></ion-img>
+                      </ion-card-content>
+                      <div
+                        class="center-content-item"
+                        [ngClass]="
+                          value == 1 ? 'card-footer-selected' : 'card-footer'
+                        "
+                      >
+                        <p>College</p>
+                      </div>
+                    </ion-card>
+                  </label>
+                </div>
+                <div style="width: 100%; display: flex">
+                  <label for="TrainingCenter" style="width: 100%">
+                    <ion-card (click)="setValue(2)">
+                      <input
+                        hidden="true"
+                        type="radio"
+                        id="TrainingCenter"
+                        name="catergorySelection"
+                        [value]="2"
+                      />
+                      <ion-card-content class="card-body center-content-item">
+                        <ion-img
+                          src="https://animalz.pk:8094/files/53593946-9247-48d1-87cf-b71df9bc95d2.png"
+                        ></ion-img>
+                      </ion-card-content>
+                      <div
+                        class="center-content-item"
+                        [ngClass]="
+                          value == 2 ? 'card-footer-selected' : 'card-footer'
+                        "
+                      >
+                        <p>Training Center</p>
+                      </div>
+                    </ion-card>
+                  </label>
+                  <label for="University" style="width: 100%">
+                    <ion-card (click)="setValue(3)">
+                      <input
+                        hidden="true"
+                        type="radio"
+                        id="University"
+                        name="catergorySelection"
+                        [value]="3"
+                      />
+                      <ion-card-content class="card-body center-content-item">
+                        <ion-img
+                          src="https://animalz.pk:8094/files/34f8b4c2-fa28-4469-8020-a774c0a6435c.png"
+                        ></ion-img>
+                      </ion-card-content>
+                      <div
+                        class="center-content-item"
+                        [ngClass]="
+                          value == 3 ? 'card-footer-selected' : 'card-footer'
+                        "
+                      >
+                        <p>University</p>
+                      </div>
+                    </ion-card>
+                  </label>
+                </div>
+                <ion-row class="ion-justify-content-center ion-margin-top">
+                  <ion-col size="12">
+                    <ion-button
+                    [disabled]="value == -1"
+                      type="submit"
+                      expand="block"
+                      class="background-blue-gradiant"
+                      routerLink="/auth/register/mobile-number"
+                    >
+                      Continue
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+              </form>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  <app-footer></app-footer>
+</ion-app>

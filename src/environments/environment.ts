@@ -3,6 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  baseURL: 'https://animalz.pk:8091/api/v1/',
+  fileUploadBaseURL: 'https://animalz.pk:8094/api/v1/',
   production: false
 };
 

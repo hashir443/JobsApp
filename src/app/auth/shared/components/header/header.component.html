@@ -1,0 +1,16 @@
+<ion-header class="custom-header ion-no-border">
+  <div class="lang-switchr">
+    <div *ngFor="let lag of languages">
+      <div
+        [ngStyle]="{
+          'font-family': lag.code === 'ur' ? 'JameelNooriNastaleeq' : 'Inter'
+        }"
+        (click)="onLanguageChange(lag.code)"
+        [ngClass]="lag.isSelected ? 'active-lang' : ''"
+        class="make-icon-to-cursor"
+      >
+        {{ lag.label }}
+      </div>
+    </div>
+  </div>
+</ion-header>

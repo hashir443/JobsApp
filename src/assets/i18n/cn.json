@@ -1,0 +1,14 @@
+{
+    "GLOBAL":{},
+    "LOGIN":{
+        "label":"登录",
+        "label_desc":"继续您的帐户！",
+        "user_name_placeholder":"输入用户名",
+        "user_name_required":"用户名是必需的",
+        "password_placeholder":"输入密码",
+        "password_required":"密码是必需的",
+        "forgot_password_label":"忘记密码？",
+        "or":"或者",
+        "register_label": "登记"
+    }
+}

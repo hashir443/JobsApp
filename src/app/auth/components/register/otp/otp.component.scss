@@ -1,0 +1,27 @@
+.otp-style {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.otp-style ::ng-deep .ngx-otp-input{width: 42px;height: 42px;font-size: 16px;color: #000;background: white;
+    border: 1px solid #E2E8F0;border-radius: 5px;}
+.text-dec-style,.resend-code{font-size: 13.5px;color: #000;}
+.text-dec-style a, .btn-send{
+    text-decoration: none;
+    color: #df9424;
+    cursor: pointer;
+    font-weight: bold;
+}
+.resend-code{display: flex;align-items: center;margin-bottom: 30px;}
+.resend-code p{margin: 0px;}
+.not-received {
+    cursor: pointer;
+}
+
+@media screen and (max-width:767px){
+    .otp-style{margin-top: 16px;margin-bottom: 22px;}
+    .resend-code{margin-bottom: 20px;}
+}
+
+@media screen and (max-width:575px){
+    .otp-style ::ng-deep .ngx-otp-input-container{justify-content: center;}
+}

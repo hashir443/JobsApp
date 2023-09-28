@@ -1,0 +1,14 @@
+{
+    "GLOBAL":{},
+    "LOGIN":{
+        "label":"Login",
+        "label_desc":"To continue your account!",
+        "user_name_placeholder":"Enter Username",
+        "user_name_required":"Username is required",
+        "password_placeholder":"Enter Password",
+        "password_required":"Password is required",
+        "forgot_password_label":"Forgot Password?",
+        "or":"Or",
+        "register_label": "Register"
+    }
+}

@@ -1,0 +1,149 @@
+<ion-app>
+  <app-header></app-header>
+  <ion-content forceOverscroll="false">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" sizeSm="10" sizeMd="8" sizeLg="6" sizeXl="4">
+          <div class="ion-text-center ion-padding-top">
+            <img
+              src="https://animalz.pk:8094/files/ec062fd8-a205-49df-b8ac-c2b84e18723b.png"
+              alt="logo"
+            />
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" sizeMd="8" sizeLg="6" sizeXl="4">
+          <ion-card class="ion-card-no-border ion-no-padding">
+            <ion-card-content>
+              <form autocomplete="off">
+                <div>
+                  <ion-text>
+                    <h1 style="font-weight: 700">What's your number?</h1>
+                    <!-- <h3 style="font-weight: 300; padding-top: 8px">
+                        Institute type to continue!
+                      </h3> -->
+                  </ion-text>
+                </div>
+                <div style="display: flex" class="ion-padding-horizontal">
+                  <div
+                    style="
+                      flex: 3;
+                      cursor: pointer;
+                      display: flex;
+                      justify-content: center;
+                    "
+                    (click)="showDropDown()"
+                  >
+                    <ion-item class="ion-no-padding">
+                      <div
+                        style="
+                          display: flex;
+                          justify-content: space-evenly;
+                          padding-top: 20px;
+                          min-height: 56px !important;
+                        "
+                      >
+                        <div style="padding-right: 5px; padding-top: 1px">
+                          {{ selectedCountry?.code ?? "+92" }}
+                        </div>
+                        <div style="display: flex">
+                          <img
+                            style="width: 25px; height: 25px"
+                            [src]="
+                              selectedCountry?.imageUrl ??
+                              'https://animalz.pk:8094/files/7bab1729-fb2d-48f4-b511-d9501f35b37d.png'
+                            "
+                          />
+                        </div>
+                      </div>
+                    </ion-item>
+                  </div>
+                  <div style="flex: 9">
+                    <ion-item class="ion-no-padding">
+                      <ion-input
+                        type="tel"
+                        pattern="^[0-9]*$"
+                        maxlength="11"
+                        style="min-height: 56px !important; --padding-top: 8px"
+                        placeholder="12345678910"
+                      ></ion-input>
+                    </ion-item>
+                  </div>
+                </div>
+                <ng-template [ngIf]="selectionMade">
+                  <div
+                    style="
+                      height: 92px;
+                      width: 160px;
+                      z-index: 9999;
+                      background-color: white;
+                      position: absolute;
+                      border: 1px solid black;
+                    "
+                  >
+                    <ul style="list-style: none; padding: 0px; margin: 0px">
+                      <li *ngFor="let country of countries">
+                        <div
+                          style="
+                            display: flex;
+                            height: 27px;
+                            justify-content: space-around;
+                            align-items: center;
+                            cursor: pointer;
+                          "
+                          (click)="chooseOption(country)"
+                        >
+                          <div>
+                            {{ country.code }}
+                          </div>
+                          <div style="height: 100%; display: flex">
+                            <img
+                              style="width: 27px; height: 25px"
+                              [src]="country.imageUrl"
+                              alt="pak"
+                            />
+                          </div>
+                          <div>
+                            {{ country.fName }}
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </ng-template>
+                <div style="padding-top: 16px">
+                  <ion-label>
+                    By continuing you may recieve recieve an SMS for verfication
+                  </ion-label>
+                </div>
+                <ion-row class="ion-justify-content-center ion-margin-top ion-no-padding">
+                  <ion-col size="12">
+                    <ion-button
+                      type="submit"
+                      expand="block"
+                      class="background-blue-gradiant"
+                      routerLink="/auth/register/otp"
+                    >
+                      Continue
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+              </form>
+              <div style="padding-top: 16px">
+                <ion-label>
+                  Already have an account?
+                  <a style="text-decoration: none" routerLink="/auth/login">Login</a>
+                </ion-label>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  <app-footer></app-footer>
+</ion-app>

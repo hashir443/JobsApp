@@ -1,0 +1,53 @@
+.icon-adjust-position {
+  position: absolute;
+  left: 3px;
+  top: 60%;
+  transform: translateY(-50%);
+  font-size: 22px;
+}
+
+.ion-card-no-border {
+  display: initial;
+}
+
+.or-line-style {
+  display: flex;
+  justify-content: space-around;
+}
+
+.line {
+  height: 1px;
+  width: 40%;
+  margin-top: 4px;
+  background-color: #e0e0e0;
+}
+
+.or {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+div img{
+  height:55px;
+  margin-bottom: -30px;
+}
+
+.text-danger{
+  color: red!important;
+}
+
+a{
+  text-decoration: none;
+}
+
+.background-blue-gradiant{
+  --height:30px!important
+}
+
+ion-icon{
+  display: block!important;
+}

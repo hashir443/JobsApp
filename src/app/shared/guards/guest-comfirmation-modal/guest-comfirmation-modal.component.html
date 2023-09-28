@@ -1,0 +1,25 @@
+<div class="modal-header header-bg-orange inter-jameel-noori">
+    <h4 class="modal-title" id="modal-basic-title">
+      <!-- {{ "ERROR_HNADLER.guest_error" | translate }} -->
+    </h4>
+  </div>
+  <div class="modal-body">
+    <form>
+      <p class="inter-jameel-noori">
+        <!-- {{ "ERROR_HNADLER.guest_prompt_label" | translate }} -->
+      </p>
+    </form>
+  </div>
+  <div class="modal-footer inter-jameel-noori-no-rtl">
+    <button
+      (click)="redirectToLogin()"
+      class="btn modal-submit-btns inter-jameel-noori"
+    >
+      <!-- {{ "REELS.yes" | translate }} -->
+    </button>
+    <button
+      (click)="dismissModal()"
+      class="btn modal-submit-btns inter-jameel-noori"
+    >
+      <!-- {{ "REELS.no" | translate }} -->
+    </button>

@@ -1,0 +1,144 @@
+<ion-app>
+  <app-header></app-header>
+  <ion-content  forceOverscroll="false">
+    <ion-grid >
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" sizeSm="10" sizeMd="8" sizeLg="6" sizeXl="4">
+          <div class="ion-text-center ion-padding-horizontal ion-padding-top">
+            <img
+              src="https://animalz.pk:8094/files/ec062fd8-a205-49df-b8ac-c2b84e18723b.png"
+              alt="logo"
+            />
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid >
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" sizeMd="8" sizeLg="6" sizeXl="4">
+          <ion-card class="ion-card-no-border">
+            <ion-card-content>
+              <form
+                [formGroup]="userForm"
+                (ngSubmit)="onSubmit(userForm)"
+                autocomplete="off"
+              >
+                <div class="ion-padding-horizontal">
+                  <ion-text>
+                    <h1 style="font-weight: 700">{{ 'LOGIN.label' | translate }}</h1>
+                    <h3 style="font-weight: 300; padding-top: 8px">
+                      {{ 'LOGIN.label_desc' | translate }}
+                    </h3>
+                  </ion-text>
+                </div>
+                <ion-label class="ion-padding-horizontal" style="padding-top: 10px"><strong>Username</strong></ion-label>
+                <ion-item>
+                  <ion-input
+                    placeholder="{{ 'LOGIN.user_name_placeholder' | translate }}"
+                    clearInput="false"
+                    formControlName="userName"
+                    type="text"
+                    style="--padding-start: 32px; --padding-top: 14px"
+                  >
+                    <ion-icon
+                      name="person-outline"
+                      slot="start"
+                      class="icon-adjust-position"
+                    ></ion-icon>
+                  </ion-input>
+                </ion-item>
+                <div
+                  *ngIf="f['userName'].invalid && f['userName'].touched"
+                  class="ion-padding-horizontal"
+                >
+                  <div
+                    class="text-danger"
+                    *ngIf="f['userName'].errors?.['required']"
+                  >
+                  {{ 'LOGIN.user_name_required' | translate }}
+                  </div>
+                </div>
+                <ion-label class="ion-padding-horizontal" style="padding-top: 10px"><strong>Password</strong></ion-label>
+                <ion-item>
+                  <ion-input
+                    placeholder="{{ 'LOGIN.password_placeholder' | translate }}"
+                    clearInput="false"
+                    formControlName="password"
+                    type="password"
+                    style="--padding-start: 32px; --padding-top: 14px"
+                  >
+                    <ion-icon
+                      name="lock-closed-outline"
+                      slot="start"
+                      class="icon-adjust-position"
+                    ></ion-icon>
+                  </ion-input>
+                </ion-item>
+                <div
+                  style="padding-top: 8px"
+                  *ngIf="f['password'].invalid && f['password'].touched"
+                  class="ion-padding-horizontal"
+                >
+                  <div
+                    class="text-danger"
+                    *ngIf="f['password'].errors?.['required']"
+                  >
+                  {{ 'LOGIN.password_required' | translate }}
+                  </div>
+                </div>
+                <ion-grid>
+                  <ion-row class="ion-justify-content-end">
+                    <div>
+                      <ion-text><a href="#">{{ 'LOGIN.forgot_password_label' | translate }}</a></ion-text>
+                    </div>
+                  </ion-row>
+                </ion-grid>
+                <ion-row class="">
+                  <ion-col size="12">
+                    <ion-button
+                      
+                      type="submit"
+                      expand="block"
+                      class="background-blue-gradiant"
+                    >
+                    {{ 'LOGIN.label' | translate }}<ion-icon
+                        name="log-in-outline"
+                        slot="end"
+                      ></ion-icon>
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="ion-justify-content-center">
+                  <ion-col size="10">
+                    <div class="or-line-style">
+                      <div class="line"></div>
+                      <small class="or text-center">{{ 'LOGIN.or' | translate }}</small>
+                      <div class="line"></div>
+                    </div>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="">
+                  <ion-col size="12">
+                    <ion-button
+                      routerLink="/auth/register/category"
+                      expand="block"
+                      
+                      color="secondary"
+                    >
+                    {{ 'LOGIN.register_label' | translate }}<ion-icon
+                        name="person-circle-outline"
+                        slot="end"
+                      ></ion-icon>
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+              </form>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  <app-footer></app-footer>
+</ion-app>

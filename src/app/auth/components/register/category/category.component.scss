@@ -1,0 +1,30 @@
+ion-card{
+    --ion-background-color: linear-gradient(90deg, #2446df 0%, #5f74eb 100%);
+  }
+  
+  .card-footer{
+    background: linear-gradient(90deg, #2446df 0%, #5f74eb 100%);
+    color:white;
+    height: 30px;
+    width: 100%;
+    border-top: 1px solid black;
+  }
+  
+  .card-footer-selected{
+    background: linear-gradient(90deg, #dfbd24 0%, #ebc35f 100%);
+    color:white;
+    height: 30px;
+    width: 100%;
+    border-top: 1px solid black;
+  }
+  
+  ion-img{
+    height:90px;
+    width:90px
+  }
+  
+  .center-content-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
