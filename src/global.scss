@@ -24,3 +24,64 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+
+.modal-submit-btns {
+    background-color: white;
+    border: #828282 solid 1px;
+    border-radius: 5px;
+    color: #828282;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.modal-cancel-btns {
+    background-color: white;
+    border: #828282 solid 1px;
+    border-radius: 5px;
+    color: #828282;
+    cursor: pointer;
+}
+
+.modal-submit-btns:hover {
+    background: linear-gradient(90deg, #2446df 0%, #5f74eb 100%);
+    color: white;
+}
+
+.modal-cancel-btns:hover {
+    background-color: white;
+    border: #828282 solid 1px;
+    color: #828282;
+}
+
+.custom-modal-dialog {
+    max-height: 50vh;
+    overflow-y: hidden;
+}
+
+.header-bg-orange {
+    background: linear-gradient(90deg, #2446df 0%, #5f74eb 100%);
+    color: white;
+}
+
+
+/*
+ *  custom scroll bar design
+ */
+
+ .app-scroll-bar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+.app-scroll-bar::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+.app-scroll-bar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #9ca094;
+}

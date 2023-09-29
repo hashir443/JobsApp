@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoadingController } from '@ionic/angular';
 import { validate } from 'src/app/shared/helpers/form.helper';
 import { SpinnerService } from 'src/app/shared/spinner/spinner.service';
 import { User } from 'src/app/models/user.model';
 import { AuthGuard } from 'src/app/shared/guards/auth.guard';
-import { AppToastrService } from 'src/app/shared/app-toastr.service';
 import { AuthService } from '../../services/auth.service';
+import { AppToastrService } from 'src/app/shared/app-toastr.service';
 
 @Component({
   selector: 'app-login',

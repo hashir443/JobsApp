@@ -16,10 +16,11 @@ import { PermissionService } from './shared/services/permission.service';
 import { NoAuthGuard } from './shared/guards/no-auth.guard';
 import { PermissionGuard } from './shared/guards/permission.guard';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
-import { NotifierModule } from 'angular-notifier';
-import { customNotifierOptions } from './shared/app-toastr.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgOtpInputModule } from  'ng-otp-input';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NotifierModule } from 'angular-notifier';
+import { customNotifierOptions } from './shared/app-toastr.service';
 
 @NgModule({
   declarations: [AppComponent,SpinnerComponent],
@@ -39,11 +40,13 @@ import { NgOtpInputModule } from  'ng-otp-input';
         deps: [HttpClient],
       },
     }),
+    NgbModule,
   ],
   providers: [
     AuthGuard,
     PermissionGuard,
     PermissionService,
+    NgbModule,
     NoAuthGuard,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     {

@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from '../auth/shared/components/header/header.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { FooterComponent } from '../auth/shared/components/footer/footer.component';
+import { NgbActiveModal, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -15,7 +16,8 @@ import { FooterComponent } from '../auth/shared/components/footer/footer.compone
     IonicModule,
     FormsModule,
     ReactiveFormsModule,
-    TranslateModule
+    TranslateModule,
+    NgbNavModule
   ],
   exports: [
     IonicModule,
@@ -25,6 +27,7 @@ import { FooterComponent } from '../auth/shared/components/footer/footer.compone
     TranslateModule,
     HeaderComponent,
     FooterComponent
-  ]
+  ],
+  providers:[NgbActiveModal]
 })
 export class SharedModule { }

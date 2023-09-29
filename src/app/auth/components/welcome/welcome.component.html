@@ -1,3 +1,66 @@
-<p>
-  welcome works!
-</p>
+<ion-app>
+  <app-header></app-header>
+  <ion-content forceOverscroll="false">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" sizeSm="10" sizeMd="8" sizeLg="6" sizeXl="4">
+          <div class="ion-text-center ion-padding-horizontal ion-padding-top">
+            <img
+              style="
+                height: 90px;
+                margin-bottom: 0 !important;
+                margin-top: 40px;
+              "
+              src="https://animalz.pk:8094/files/bc6017bf-7ef8-446e-8176-f911ac52c9b7.png"
+              alt="logo"
+            />
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" sizeMd="8" sizeLg="6" sizeXl="4">
+          <ion-card class="ion-card-no-border">
+            <ion-card-content class="ion-no-padding">
+              <form autocomplete="off">
+                <div
+                  class="ion-padding-horizontal ion-justify-content-center"
+                  style="height: 100px;margin-top: -12px;"
+                >
+                  <ion-text>
+                    <h1 style="font-weight: 700; text-align: center">
+                      Welcome To
+                    </h1>
+                    <div class="ion-text-center">
+                      <img
+                        style="height: 25px"
+                        src="https://animalz.pk:8094/files/97455601-e99e-462b-b6d4-48260b3daf72.png"
+                        alt="logo"
+                      />
+                    </div>
+                  </ion-text>
+                </div>
+
+                <ion-row class="">
+                  <ion-col size="12">
+                    <ion-button
+                    routerLink="/auth/login"
+                      type="submit"
+                      expand="block"
+                      class="background-blue-gradiant"
+                    >
+                      Continue
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+              </form>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  <app-footer></app-footer>
+</ion-app>

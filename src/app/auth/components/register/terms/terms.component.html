@@ -1,8 +1,190 @@
 <ion-app>
-  <ion-content>
-    <div class="d-flex justify-content-evenly flex-col w-100">
-      <div>1</div>
-      <div>2</div>
-    </div>
+  <app-header></app-header>
+  <ion-content forceOverscroll="false">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" sizeSm="10" sizeMd="8" sizeLg="6" sizeXl="4">
+          <div class="ion-text-center ion-padding-horizontal ion-padding-top">
+            <img
+              src="https://animalz.pk:8094/files/ec062fd8-a205-49df-b8ac-c2b84e18723b.png"
+              alt="logo"
+            />
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" sizeMd="8" sizeLg="6" sizeXl="4">
+          <ion-card class="ion-card-no-border">
+            <ion-card-content>
+              <div class="">
+                <ion-text>
+                  <h1 style="font-weight: 700">
+                    Accept Jobzzzz Terms and Privacy Policy
+                  </h1>
+                  <h3 style="font-weight: 300; padding-top: 8px">
+                    By selecting "<strong>I Accpet</strong>" below, I have
+                    reviewed and agree to the Terms of Use and acknowledge the
+                    Privacy Policy. I am atleast 18 years of age
+                  </h3>
+                </ion-text>
+              </div>
+              <div class="form-check inter-jameel-noori">
+                <input
+                  class="form-check-input"
+                  id="input-check"
+                  type="checkbox"
+                  (click)="openModal(content)"
+                  (ngModelChange)="onCheckboxChange($event)"
+                  [(ngModel)]="isChecked"
+                  
+                  (change)="onchangeTerms($event)"
+                />
+                <label class="form-check-label" for="input-check">
+                  I Agree
+                </label>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-content>
+  <app-footer></app-footer>
+
+  <ng-template #content let-modal>
+    <div class="modal-header header-bg-orange">
+      <h4 class="modal-title">Terms and Conditions</h4>
+    </div>
+    <div class="modal-body custom-modal-dialog app-scroll-bar">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+        dolore aliquam natus iure quasi. Culpa facere soluta at rerum sequi, ex
+        suscipit quod eveniet itaque obcaecati. Quisquam nobis omnis soluta.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque
+        perspiciatis impedit, aperiam quaerat illum voluptatem placeat laborum,
+        soluta, blanditiis totam voluptates molestiae inventore sunt quam
+        provident mollitia omnis tenetur distinctio! Lorem ipsum dolor, sit amet
+        consectetur adipisicing elit. Ad hic dolorum necessitatibus qui quaerat
+        harum provident, eos nulla debitis repellat illum magni culpa blanditiis
+        ipsa, pariatur ullam adipisci, aperiam aut. Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Itaque assumenda accusamus delectus
+        tempore nihil nostrum qui magnam obcaecati repudiandae necessitatibus,
+        exercitationem voluptate modi atque quod voluptatem, error, ipsa odit
+        hic. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+        commodi reprehenderit, ipsum culpa deserunt numquam dolore molestiae aut
+        nihil architecto tenetur debitis sapiente. Dolorum, mollitia? Deserunt
+        suscipit aspernatur fuga eaque. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Molestiae laboriosam quos soluta mollitia quia
+        molestias dignissimos maiores numquam voluptas veritatis sit animi
+        consequatur, eum sunt fuga. Deserunt rerum id facilis. Lorem, ipsum
+        dolor sit amet consectetur adipisicing elit. Deserunt autem quaerat,
+        nemo cupiditate repellendus pariatur laboriosam aperiam itaque minima
+        placeat ipsum temporibus minus ad? Quod iste natus doloremque quas
+        deserunt! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Quasi, voluptatibus. Quasi eaque magnam saepe mollitia architecto
+        adipisci nam delectus! Dolor at vitae numquam nobis minima modi maiores
+        esse consequatur nisi? Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Similique dolore aliquam natus iure quasi. Culpa
+        facere soluta at rerum sequi, ex suscipit quod eveniet itaque obcaecati.
+        Quisquam nobis omnis soluta. Lorem ipsum dolor, sit amet consectetur
+        adipisicing elit. Cumque perspiciatis impedit, aperiam quaerat illum
+        voluptatem placeat laborum, soluta, blanditiis totam voluptates
+        molestiae inventore sunt quam provident mollitia omnis tenetur
+        distinctio! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad
+        hic dolorum necessitatibus qui quaerat harum provident, eos nulla
+        debitis repellat illum magni culpa blanditiis ipsa, pariatur ullam
+        adipisci, aperiam aut. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Itaque assumenda accusamus delectus tempore nihil
+        nostrum qui magnam obcaecati repudiandae necessitatibus, exercitationem
+        voluptate modi atque quod voluptatem, error, ipsa odit hic. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Quibusdam commodi
+        reprehenderit, ipsum culpa deserunt numquam dolore molestiae aut nihil
+        architecto tenetur debitis sapiente. Dolorum, mollitia? Deserunt
+        suscipit aspernatur fuga eaque. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Molestiae laboriosam quos soluta mollitia quia
+        molestias dignissimos maiores numquam voluptas veritatis sit animi
+        consequatur, eum sunt fuga. Deserunt rerum id facilis. Lorem, ipsum
+        dolor sit amet consectetur adipisicing elit. Deserunt autem quaerat,
+        nemo cupiditate repellendus pariatur laboriosam aperiam itaque minima
+        placeat ipsum temporibus minus ad? Quod iste natus doloremque quas
+        deserunt! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Quasi, voluptatibus. Quasi eaque magnam saepe mollitia architecto
+        adipisci nam delectus! Dolor at vitae numquam nobis minima modi maiores
+        esse consequatur nisi? Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Similique dolore aliquam natus iure quasi. Culpa
+        facere soluta at rerum sequi, ex suscipit quod eveniet itaque obcaecati.
+        Quisquam nobis omnis soluta. Lorem ipsum dolor, sit amet consectetur
+        adipisicing elit. Cumque perspiciatis impedit, aperiam quaerat illum
+        voluptatem placeat laborum, soluta, blanditiis totam voluptates
+        molestiae inventore sunt quam provident mollitia omnis tenetur
+        distinctio! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad
+        hic dolorum necessitatibus qui quaerat harum provident, eos nulla
+        debitis repellat illum magni culpa blanditiis ipsa, pariatur ullam
+        adipisci, aperiam aut. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Itaque assumenda accusamus delectus tempore nihil
+        nostrum qui magnam obcaecati repudiandae necessitatibus, exercitationem
+        voluptate modi atque quod voluptatem, error, ipsa odit hic. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Quibusdam commodi
+        reprehenderit, ipsum culpa deserunt numquam dolore molestiae aut nihil
+        architecto tenetur debitis sapiente. Dolorum, mollitia? Deserunt
+        suscipit aspernatur fuga eaque. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Molestiae laboriosam quos soluta mollitia quia
+        molestias dignissimos maiores numquam voluptas veritatis sit animi
+        consequatur, eum sunt fuga. Deserunt rerum id facilis. Lorem, ipsum
+        dolor sit amet consectetur adipisicing elit. Deserunt autem quaerat,
+        nemo cupiditate repellendus pariatur laboriosam aperiam itaque minima
+        placeat ipsum temporibus minus ad? Quod iste natus doloremque quas
+        deserunt! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Quasi, voluptatibus. Quasi eaque magnam saepe mollitia architecto
+        adipisci nam delectus! Dolor at vitae numquam nobis minima modi maiores
+        esse consequatur nisi? Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Similique dolore aliquam natus iure quasi. Culpa
+        facere soluta at rerum sequi, ex suscipit quod eveniet itaque obcaecati.
+        Quisquam nobis omnis soluta. Lorem ipsum dolor, sit amet consectetur
+        adipisicing elit. Cumque perspiciatis impedit, aperiam quaerat illum
+        voluptatem placeat laborum, soluta, blanditiis totam voluptates
+        molestiae inventore sunt quam provident mollitia omnis tenetur
+        distinctio! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad
+        hic dolorum necessitatibus qui quaerat harum provident, eos nulla
+        debitis repellat illum magni culpa blanditiis ipsa, pariatur ullam
+        adipisci, aperiam aut. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Itaque assumenda accusamus delectus tempore nihil
+        nostrum qui magnam obcaecati repudiandae necessitatibus, exercitationem
+        voluptate modi atque quod voluptatem, error, ipsa odit hic. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Quibusdam commodi
+        reprehenderit, ipsum culpa deserunt numquam dolore molestiae aut nihil
+        architecto tenetur debitis sapiente. Dolorum, mollitia? Deserunt
+        suscipit aspernatur fuga eaque. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Molestiae laboriosam quos soluta mollitia quia
+        molestias dignissimos maiores numquam voluptas veritatis sit animi
+        consequatur, eum sunt fuga. Deserunt rerum id facilis. Lorem, ipsum
+        dolor sit amet consectetur adipisicing elit. Deserunt autem quaerat,
+        nemo cupiditate repellendus pariatur laboriosam aperiam itaque minima
+        placeat ipsum temporibus minus ad? Quod iste natus doloremque quas
+        deserunt! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Quasi, voluptatibus. Quasi eaque magnam saepe mollitia architecto
+        adipisci nam delectus! Dolor at vitae numquam nobis minima modi maiores
+        esse consequatur nisi?
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn modal-submit-btns"
+        (click)="modal.close('agree')"
+      >
+        Agree
+      </button>
+      <button
+        type="button"
+        class="btn modal-cancel-btns"
+        (click)="modelCanceled()"
+      >
+        Cancel
+      </button>
+    </div>
+  </ng-template>
 </ion-app>

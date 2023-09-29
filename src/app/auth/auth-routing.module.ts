@@ -7,6 +7,7 @@ import { OtpComponent } from './components/register/otp/otp.component';
 import { TermsComponent } from './components/register/terms/terms.component';
 import { UserNameComponent } from './components/register/user-name/user-name.component';
 import { CategoryComponent } from './components/register/category/category.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 
 const routes: Routes = [
@@ -47,6 +48,10 @@ const routes: Routes = [
             component: UserNameComponent
           },
         ]
+      },
+      {
+        path: "welcome",
+        component: WelcomeComponent
       }
     ],
   },

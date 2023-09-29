@@ -1,3 +1,100 @@
-<p>
-  user-name works!
-</p>
+<ion-app>
+  <app-header></app-header>
+  <ion-content  forceOverscroll="false">
+    <ion-grid >
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" sizeSm="10" sizeMd="8" sizeLg="6" sizeXl="4">
+          <div class="ion-text-center ion-padding-horizontal ion-padding-top">
+            <img
+              src="https://animalz.pk:8094/files/ec062fd8-a205-49df-b8ac-c2b84e18723b.png"
+              alt="logo"
+            />
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid >
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" sizeMd="8" sizeLg="6" sizeXl="4">
+          <ion-card class="ion-card-no-border">
+            <ion-card-content class="ion-no-padding ion-padding-top">
+              <form
+                
+                autocomplete="off"
+              >
+                <div class="ion-padding-horizontal">
+                  <ion-text>
+                    <h1 style="font-weight: 700">Please enter your details</h1>
+                    <h3 style="font-weight: 300; padding-top: 8px">
+                      Let us know how to properly address you
+                    </h3>
+                  </ion-text>
+                </div>
+                <ion-item>
+                  <ion-input
+                    placeholder="First Name"
+                    clearInput="false"
+                    type="text"
+                  >
+                  </ion-input>
+                </ion-item>
+                
+                <ion-item>
+                  <ion-input
+                    placeholder="Last Name"
+                    clearInput="false"
+                    type="text"
+                  >
+                  </ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-input
+                    placeholder="Email"
+                    clearInput="false"
+                    type="Email"
+                  >
+                  </ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-input
+                    placeholder="Password (required)"
+                    clearInput="false"
+                    type="password"
+                  >
+                  </ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-input
+                    placeholder="Confirm Password (required)"
+                    clearInput="false"
+                    type="password"
+                  >
+                  </ion-input>
+                </ion-item>
+                
+                <ion-row class="">
+                  <ion-col size="12">
+                    <ion-button
+                      routerLink="/auth/register/terms"
+                      type="submit"
+                      expand="block"
+                      class="background-blue-gradiant"
+                    >
+                    Continue
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+                
+              </form>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  <app-footer></app-footer>
+</ion-app>
