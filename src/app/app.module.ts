@@ -21,6 +21,7 @@ import { NgOtpInputModule } from  'ng-otp-input';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NotifierModule } from 'angular-notifier';
 import { customNotifierOptions } from './shared/app-toastr.service';
+import { NativePageTransitions } from '@ionic-native/native-page-transitions/ngx';
 
 @NgModule({
   declarations: [AppComponent,SpinnerComponent],
@@ -45,6 +46,7 @@ import { customNotifierOptions } from './shared/app-toastr.service';
   providers: [
     AuthGuard,
     PermissionGuard,
+    NativePageTransitions,
     PermissionService,
     NgbModule,
     NoAuthGuard,

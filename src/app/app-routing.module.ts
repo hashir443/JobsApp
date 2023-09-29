@@ -12,11 +12,11 @@ const routes: Routes = [
   {
     path: "auth",
     loadChildren: () => import('./auth/auth.module').then( (m => m.AuthModule)),
-    canActivate:[NoAuthGuard]
+    canActivate:[NoAuthGuard],
   },
   {
     path: "main",
-    loadChildren: () => import('./dashboard/dashboard.module').then( (m => m.DashboardPageModule))
+    loadChildren: () => import('./dashboard/dashboard.module').then( (m => m.DashboardPageModule)),
   },
   {
     path: "**",

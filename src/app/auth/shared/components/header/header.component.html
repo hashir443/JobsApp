@@ -1,4 +1,9 @@
-<ion-header class="custom-header ion-no-border">
+<ion-header class="custom-header ion-no-border w-100">
+  <ion-toolbar>
+    <ion-buttons slot="start" *ngIf="isLoginPage == false">
+      <ion-back-button  defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
   <div class="lang-switchr">
     <div *ngFor="let lag of languages">
       <div

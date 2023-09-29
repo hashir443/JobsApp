@@ -34,7 +34,7 @@ export class DashboardPage implements OnInit {
 
   LogoutUser() {
     AuthGuard.logout();
-    // window.location.reload()
+    //window.location.reload()
     this.router.navigate(['/auth/login']);
   }
 

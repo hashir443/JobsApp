@@ -1,0 +1,12 @@
+/* Define the initial state */
+.slide-enter,
+.slide-leave {
+  transform: translateX(0);
+}
+
+/* Define the final state for entering and leaving */
+.slide-enter.slide-enter-active,
+.slide-leave.slide-leave-active {
+  transform: translateX(0); /* Or your desired final position */
+  transition: transform 150ms ease-in-out; /* Adjust duration and easing */
+}

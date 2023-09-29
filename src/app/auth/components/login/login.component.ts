@@ -7,6 +7,11 @@ import { User } from 'src/app/models/user.model';
 import { AuthGuard } from 'src/app/shared/guards/auth.guard';
 import { AuthService } from '../../services/auth.service';
 import { AppToastrService } from 'src/app/shared/app-toastr.service';
+import {
+  NativePageTransitions,
+  NativeTransitionOptions,
+} from '@ionic-native/native-page-transitions/ngx';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +20,7 @@ import { AppToastrService } from 'src/app/shared/app-toastr.service';
 })
 export class LoginComponent implements OnInit {
   userForm: FormGroup;
-  user:User = new User;
+  user: User = new User();
   errorMessage: string = '';
 
   constructor(
@@ -24,6 +29,8 @@ export class LoginComponent implements OnInit {
     private router: Router,
     public spinnerService: SpinnerService,
     private _authService: AuthService,
+    private nativePageTransition: NativePageTransitions,
+    public platform: Platform
   ) {
     this.userForm = this.initForm();
   }
@@ -55,39 +62,21 @@ export class LoginComponent implements OnInit {
 
     this.errorMessage = '';
     this.spinnerService.requestInProcess(true);
-    const sub = this._authService.Login(obj)
-    .subscribe(
-      {
-        next: (v) => {
-          this.appToastr.success('Welcome User');
-          this.updateTokens(v.data.data)
-          this.redirectToFeed()
-        },
-        error: (e) => {
-          this.errorMessage = e.message || "Something went wrong please try again later";
-          this.appToastr.error(this.errorMessage);
-        },
-        complete: () => {
-          this.spinnerService.requestInProcess(false);
-        }
-      }
-    )
-
-    // if (obj) {
-    //   const loading = await this.loadingController.create({
-    //     message: 'Loggin In...',
-    //     duration: 2000,
-    //   });
-
-    //   await loading.present();
-
-    //   setTimeout(() => {
-    //     console.log(obj);
-    //     loading.dismiss();
-    //     this.router.navigate(['/']);
-    //     this.userForm = this.initForm();
-    //   }, 2000); // Replace this timeout with your actual login logic
-    // }
+    const sub = this._authService.Login(obj).subscribe({
+      next: (v) => {
+        this.appToastr.success('Welcome User');
+        this.updateTokens(v.data.data);
+        this.redirectToFeed();
+      },
+      error: (e) => {
+        this.errorMessage =
+          e.message || 'Something went wrong please try again later';
+        this.appToastr.error(this.errorMessage);
+      },
+      complete: () => {
+        this.spinnerService.requestInProcess(false);
+      },
+    });
   }
 
   get f() {
@@ -100,7 +89,7 @@ export class LoginComponent implements OnInit {
     AuthGuard.login(this.user);
   }
 
-  redirectToFeed(){
+  redirectToFeed() {
     this.router.navigate(['/main']);
   }
 }
