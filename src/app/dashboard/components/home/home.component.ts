@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent  implements OnInit {
 
-  constructor() { }
+  constructor(private toastController: ToastController) { }
 
   ngOnInit() {}
+
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Hello World!',
+      duration: 1500,
+      color: 'success',
+      icon: 'globe',
+    });
+
+    await toast.present();
+  }
 
 }

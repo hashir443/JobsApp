@@ -5,40 +5,63 @@
         <ion-title>Menu Content</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content class="ion-padding">
-      <ion-label>
-        <h3>Main Menu</h3>
-      </ion-label>
-      <ng-container *ngFor="let menu of menuItem">
-      <div style="display: flex; min-width: 100%"  [routerLink]="menu.route">
-        <div style="display: flex; justify-content: center; align-items: center;">
-          <ion-icon [name]="menu.icon"></ion-icon>
+    <ion-content>
+      <ion-list>
+        <ion-list-header>
+          <ion-label>Account</ion-label>
+        </ion-list-header>
+        <ion-menu-toggle autoHide="false" *ngFor="let p of accountPages; let i = index">
+          <ion-item [routerLink]="p.url">
+            <ion-icon slot="start" [name]="p.ionicIcon? p.ionicIcon: ''"></ion-icon>
+            <ion-label>
+              {{p.title}}
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+      <!-- <ng-container *ngFor="let menu of menuItem" style="width: 100%!important">
+        <div style="display: flex; min-width: 100%" [routerLink]="menu.route">
+          <div
+            style="display: flex; justify-content: center; align-items: center"
+          >
+            <ion-icon [name]="menu.icon"></ion-icon>
+          </div>
+          <div>
+            <ion-item class="w-100" lines="none"> {{ menu.label }} </ion-item>
+          </div>
         </div>
-        <div>
-          <ion-item class="w-100" lines="none"> {{ menu.label }} </ion-item>
-        </div>
-      </div>
-    </ng-container>
+      </ng-container> -->
+      <ion-button (click)="LogoutUser()"> Logout </ion-button>
     </ion-content>
-    
   </ion-menu>
   <div class="ion-page" id="main-content">
     <ion-header>
-      <ion-toolbar>
+      <ion-toolbar class="header-bg-color">
         <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
+          <ion-menu-button class="icon-white"></ion-menu-button>
         </ion-buttons>
-        <ion-title>Menu</ion-title>
+        <ion-buttons slot="end">
+          <ion-button>
+            <ion-icon class="icon-white" name="notifications-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
       </ion-toolbar>
+
+        
+
     </ion-header>
     <ion-content class="ion-padding">
+
       <ion-router-outlet></ion-router-outlet>
-      <ion-button routerLink="/auth/login">
-        Redirect to login
-      </ion-button>
-      <ion-button (click)="LogoutUser()">
-        Logout
-      </ion-button>
+      <ion-tabs>
+        <ion-tab-bar>
+          <ion-tab-button>1</ion-tab-button>
+          <ion-tab-button>1</ion-tab-button>
+          <ion-tab-button>1</ion-tab-button>
+          <ion-tab-button>1</ion-tab-button>
+          <ion-tab-button>1</ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
     </ion-content>
   </div>
 </ion-app>

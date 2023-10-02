@@ -27,6 +27,19 @@ export class DashboardPage implements OnInit {
     },
   ]
 
+  accountPages = [
+    {
+       title: 'Log In',
+       url: '/auth/login',
+       ionicIcon: 'log-in-outline'
+    },
+    {
+       title: 'Sign Up',
+       url: '/auth/signup',
+       ionicIcon: 'person-add-outline'
+    },
+  ]
+
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -37,5 +50,7 @@ export class DashboardPage implements OnInit {
     //window.location.reload()
     this.router.navigate(['/auth/login']);
   }
+
+  
 
 }

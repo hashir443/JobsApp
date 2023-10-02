@@ -11,7 +11,7 @@ import {
   NativePageTransitions,
   NativeTransitionOptions,
 } from '@ionic-native/native-page-transitions/ngx';
-import { Platform } from '@ionic/angular';
+import { Platform, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -30,7 +30,8 @@ export class LoginComponent implements OnInit {
     public spinnerService: SpinnerService,
     private _authService: AuthService,
     private nativePageTransition: NativePageTransitions,
-    public platform: Platform
+    public platform: Platform,
+    private toastController: ToastController
   ) {
     this.userForm = this.initForm();
   }
@@ -54,7 +55,7 @@ export class LoginComponent implements OnInit {
     this.loginUser();
   }
 
-  async loginUser() {
+  loginUser() {
     const obj = {
       mobileNumber: this.userForm.value.userName,
       password: this.userForm.value.password,
@@ -62,16 +63,40 @@ export class LoginComponent implements OnInit {
 
     this.errorMessage = '';
     this.spinnerService.requestInProcess(true);
-    const sub = this._authService.Login(obj).subscribe({
-      next: (v) => {
-        this.appToastr.success('Welcome User');
+    this._authService.Login(obj).subscribe({
+      next: async (v) => {
+        const toast = this.toastController.create({
+          message: 'Welcome User',
+          color:'success',
+          duration: 3000,
+          buttons: [
+            {
+              text: 'Dismiss',
+              role: 'cancel',
+            },
+          ],
+        });
+        await (await toast).present();
+        // this.appToastr.success('Welcome User');
         this.updateTokens(v.data.data);
         this.redirectToFeed();
       },
-      error: (e) => {
+      error: async (e) => {
+        const toast = this.toastController.create({
+          message: e.message || 'Something went wrong please try again later',
+          color: 'danger',
+          duration: 3000,
+          buttons: [
+            {
+              text: 'Dismiss',
+              role: 'cancel',
+            },
+          ],
+        });
+        await (await toast).present();
         this.errorMessage =
           e.message || 'Something went wrong please try again later';
-        this.appToastr.error(this.errorMessage);
+        // this.appToastr.error(this.errorMessage);
       },
       complete: () => {
         this.spinnerService.requestInProcess(false);
